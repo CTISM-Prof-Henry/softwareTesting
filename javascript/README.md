@@ -70,3 +70,79 @@ os comandos a serem executados pela linha de comando devem ser executados a part
    # todo 0
    # fail 0
    ```
+
+## Cobertura
+
+Existem diversas bibliotecas para calcular a cobertura em Javascript. Neste tutorial, usaremos a 
+biblioteca [Istanbul](https://istanbul.js.org/).
+
+1. Pela linha de comando, instale a biblioteca QUnit :
+
+   ```bash
+   npm install --save-dev qunit nyc
+   ```
+   
+2. Será criado um arquivo `package.json` no diretório onde o comando foi executado. Abra-o e insira as seguintes linhas:
+
+   ```json
+   {
+       "scripts": {
+           "test": "nyc qunit"
+       },
+        "nyc": {
+            "reporter": ["text", "html"],
+            "include": ["src/**/*.js"],
+            "exclude": ["test/**/*.js"],
+            "all": true
+        }
+   }
+   ```
+
+3. Seu arquivo `package.json` se parecerá com isso:
+
+   ```json
+   {
+       "devDependencies": {
+           "nyc": "^17.1.0",
+           "qunit": "^2.24.1"
+       },
+       "scripts": {
+           "test": "nyc qunit"
+       },
+        "nyc": {
+            "reporter": ["text", "html"],
+            "include": ["src/**/*.js"],
+            "exclude": ["test/**/*.js"],
+            "all": true
+        }
+   }
+   ```
+   
+4. Pela linha de comando, execute os testes com:
+
+   ```bash
+   npm test
+   ```
+   
+5. A saída do console se parecerá com isso:
+   
+   ```bash
+   > test
+   > nyc qunit
+   
+   TAP version 13
+   ok 1 Ponto > distancia_euclidiana calcula corretamente
+   1..1
+   # pass 1
+   # skip 0
+   # todo 0
+   # fail 0
+   ----------|---------|----------|---------|---------|-------------------
+   File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+   ----------|---------|----------|---------|---------|-------------------
+   All files |     100 |      100 |     100 |     100 |                  
+    ponto.js |     100 |      100 |     100 |     100 |                  
+   ----------|---------|----------|---------|---------|-------------------
+   ```
+   
+6. Além disso, um relatório HTML gerá gerado em [coverage/index.html](coverage/index.html).

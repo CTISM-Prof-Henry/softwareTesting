@@ -1,5 +1,15 @@
 {
   "devDependencies": {
+    "nyc": "^17.1.0",
     "qunit": "^2.24.1"
+  },
+  "scripts": {
+    "test": "nyc qunit"
+  },
+  "nyc": {
+    "reporter": ["text", "html"],
+    "include": ["src/**/*.js"],
+    "exclude": ["test/**/*.js"],
+    "all": true
   }
 }
