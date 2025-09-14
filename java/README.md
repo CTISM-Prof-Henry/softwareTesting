@@ -74,16 +74,34 @@ Para utilizá-lo:
     }
    ```
 
-5. Você pode rodar os testes individualmente (executando cada classe). A saída esperada deve ser algo como:
+5. Seu diretório deve se parecer com isto:
+   ```
+   java
+   ├─ src
+   │  ├─ main
+   │  │  └─ java
+   │  │     └─ org
+   │  │        └─ example
+   │  │           └─ Ponto.java
+   │  └─ test
+   │     └─ java
+   │        └─ org
+   │           └─ example
+   │              └─ PontoTest.java
+   ├─ target
+   └─ pom.xml
+   ```
 
-   ![junit_single_test.png](imagens/junit_single_test.png)
+6. Você pode rodar os testes individualmente (executando cada classe). A saída esperada deve ser algo como:
 
-6. Você também pode criar uma configuração na IDE para rodar todos os testes do projeto de uma só vez. O exemplo abaixo
+   ![junit_single_test.png](../imagens/junit_single_test.png)
+
+7. Você também pode criar uma configuração na IDE para rodar todos os testes do projeto de uma só vez. O exemplo abaixo
    considera a IDE Intellij IDEA:
 
-   ![junit.gif](imagens/junit.gif)
+   ![junit.gif](../imagens/junit.gif)
 
-7. Os seguintes métodos da classe Assertions são importantes para escrever testes com JUnit. Todas elas lançam exceções
+8. Os seguintes métodos da classe Assertions são importantes para escrever testes com JUnit. Todas elas lançam exceções
    em caso de falha:
 
     * `Assertions.assertEquals(expected, actual)`: Verifica se dois valores são iguais.
@@ -92,3 +110,62 @@ Para utilizá-lo:
     * `Assertions.assertThrows(Exception.class, () -> { ... })`: Verifica se uma classe lança uma exceção quando uma
       condição é atendida.
     * `Assertions.assertAll(...)`: agrupa múltiplas verificações em uma chamada só.
+
+
+## Cobertura
+
+Em Java, a ferramenta para verificar a cobertura mais popular é o JaCoCo. 
+
+Você pode configurá-la no Intellij IDEA da seguinte forma:
+
+1. Adicione os seguintes plugins ao seu `pom.xml` (**NOTA:** as versões dos plugins e bibliotecas mudarão no futuro e 
+   este tutorial ficará defasado. Consulte um tutorial mais atualizado na internet!):
+
+   ```xml
+   <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.13</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+   ```
+   
+2. Crie uma nova configuração de execução do Maven:
+   
+   ![jacoco.gif](../imagens/jacoco.gif)
+
+   ![jacoco.png](../imagens/jacoco.png)
+
+3. Um relatório em HTML é gerado e armazenado em [target/site/jacoco/index.html](target/site/jacoco/index.html)
+ 
+   

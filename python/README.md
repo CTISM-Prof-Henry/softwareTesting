@@ -75,7 +75,7 @@ Seu funcionamento é parecido com JUnit, mas é possível agrupar diversos teste
 
 5. A saída esperada deve ser algo como:
 
-   ![pytest.png](imagens/pytest.png)
+   ![pytest.png](../imagens/pytest.png)
 
 ## Cobertura
 
