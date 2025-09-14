@@ -52,8 +52,8 @@ Seu funcionamento é parecido com JUnit, mas é possível agrupar diversos teste
 
 > [!NOTE]
 > Onde colocar os arquivos de teste em um projeto Python? 🤔
-> pytest é flexível com relação a organização do projeto. Frameworks (como Django) terão um diretório específico para colocar
-> testes. Mas se você não estiver usando nenhum framework, uma sugestão é ter uma pasta para colocar os testes:
+> pytest é flexível com relação a organização do projeto. Frameworks (como Django) terão um diretório específico para 
+> colocar testes. Mas se você não estiver usando nenhum framework, uma sugestão é ter uma pasta para colocar os testes:
 > ```
 > meuprojeto/
 > │
@@ -76,3 +76,26 @@ Seu funcionamento é parecido com JUnit, mas é possível agrupar diversos teste
 5. A saída esperada deve ser algo como:
 
    ![pytest.png](imagens/pytest.png)
+
+## Cobertura
+
+Em Python, é possível ver a cobertura dos testes com a biblioteca `coverage`.
+
+```bash
+pip install coverage
+coverage run -m pytest -v 
+coverage report  # gera um relatório na linha de comando
+coverage html  # gera um relatório em HTML
+```
+
+Ou, se você estiver com dificuldades de rodar estes comandos:
+
+```bash
+pip install coverage
+python -m coverage run -m pytest -v 
+python -m coverage report  # gera um relatório na linha de comando
+python -m coverage html  # gera um relatório em HTML
+```
+
+Será gerado um relatório em HTML que pode ser acessado em [htmlcov/index.html](htmlcov/index.html)
+
