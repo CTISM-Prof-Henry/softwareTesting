@@ -5,9 +5,15 @@ Da mesma maneira que Java conta com JUnit para teste unitários automatizados, P
 [pytest](https://docs.pytest.org/en/stable), feita por terceiros. Este tutorial explicará como configurar e usar pytest. 
 Seu funcionamento é parecido com JUnit, mas é possível agrupar diversos testes em um arquivo.
 
+> [!NOTE]
+> Esse tutorial assume que você já tenha baixado e instalado um interpretador Python na sua máquina (de preferência o
+> [Anaconda](https://www.anaconda.com/download)), e o diretório de instalação do Anaconda esteja na variável PATH do
+> sistema. Caso não esteja, você precisará rodar os comandos com `python -m`
+
 > [!WARNING]
 > Java usa `CamelCase` para nomes de arquivos, classes e métodos, enquanto Python usa `snake_case` para nomes de
 > arquivos e métodos, e `CamelCase` para nome de classes.
+
 
 1. Instale pytest com o comando `pip install pytest`
 2. Supondo que você tenha um arquivo `ponto.py` com o seguinte código:

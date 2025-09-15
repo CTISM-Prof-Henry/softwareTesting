@@ -3,10 +3,10 @@
 Uma biblioteca popular para testes unitários automatizados em Javascript é [QUnit](). Este tutorial explicará como 
 instalar e configurar esta biblioteca no seu computador.
 
-## Pré-requisitos
-
-Você precisará ter [node.js](https://nodejs.org/pt) instalado e adicionado ao PATH do seu computador. Além disso,
-os comandos a serem executados pela linha de comando devem ser executados a partir da pasta-raiz do seu projeto.
+> [!NOTE]
+> Esse tutorial assume que você já tenha baixado e instalado o [node.js](https://nodejs.org/pt) no seu computador, e 
+> adicionado o diretório de instalação à variável PATH do computador. Além disso, os comandos da linha de comando 
+> devem ser executados a partir da pasta-raiz do projeto.
 
 ## Instalação
 

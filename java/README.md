@@ -3,6 +3,11 @@
 [JUnit](https://junit.org) é o framework de testes unitários automatizados do Java.
 
 > [!NOTE]
+> Esse tutorial assume que você já tenha baixado e instalado uma Máquina Virtual Java (JVM) na sua máquina. O ambiente
+> de desenvolvimento integrado [Intellij IDEA](https://lp.jetbrains.com/intellij-idea-promo) inclui por padrão uma 
+> JVM em todas as instalações.
+
+> [!NOTE]
 > Esse tutorial assume que você usa maven como gerenciador de bibliotecas do seu projeto.
 
 Para utilizá-lo:

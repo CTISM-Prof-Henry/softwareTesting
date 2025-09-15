@@ -1,6 +1,13 @@
 # Software Testing
 
+Esse repositório traz exemplos de como realizar testes unitários em Java, Python e Javascript, bem como verificar a 
+cobertura dos testes no código-fonte.
 
+Os tutoriais estão disponíveis nas seguintes páginas:
+
+* [Java](java/README.md)
+* [Python](python/README.md)
+* [Javascript](javascript/README.md)
 
 ## Exercícios
 
