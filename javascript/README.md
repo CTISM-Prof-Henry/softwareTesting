@@ -85,17 +85,15 @@ biblioteca [Istanbul](https://istanbul.js.org/).
 2. Será criado um arquivo `package.json` no diretório onde o comando foi executado. Abra-o e insira as seguintes linhas:
 
    ```json
-   {
-       "scripts": {
-           "test": "nyc qunit"
-       },
-        "nyc": {
-            "reporter": ["text", "html"],
-            "include": ["src/**/*.js"],
-            "exclude": ["test/**/*.js"],
-            "all": true
-        }
-   }
+    "scripts": {
+        "test": "nyc qunit"
+    },
+     "nyc": {
+         "reporter": ["text", "html"],
+         "include": ["src/**/*.js"],
+         "exclude": ["test/**/*.js"],
+         "all": true
+     }
    ```
 
 3. Seu arquivo `package.json` se parecerá com isso:
